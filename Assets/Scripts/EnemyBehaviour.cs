@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyBehaviour : MonoBehaviour
 {
     Transform target;
     //private float range = 500.0f;
     Rigidbody2D rb;
-    public float speed = 3.5f;
+    //public float speed = 3.5f;
+    public EnemyStats stats;
+    private float health;
     private Vector2 moveDirection;
     
     // Start is called before the first frame update
@@ -17,7 +20,7 @@ public class EnemyBehaviour : MonoBehaviour
         //Destroy(gameObject);
         if (col.collider.gameObject.CompareTag("Character"))
         {
-            target.GetComponent<PlayerStats>().takeDamage(10.0f);
+            target.GetComponent<PlayerStats>().takeDamage(stats.damage);
         }
     }
     
@@ -31,6 +34,16 @@ public class EnemyBehaviour : MonoBehaviour
     void Start()
     {
         target = GameObject.Find("Character").transform;
+        health = stats.health;
+    }
+
+    public void takeDamage(float dmg)
+    {
+        health -= dmg;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()
@@ -56,7 +69,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (target)
         {
-            rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * speed;
+            rb.velocity = new Vector2(moveDirection.x, moveDirection.y) * stats.speed;
         }
     }
 }

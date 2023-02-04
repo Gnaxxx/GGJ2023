@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1609307986714359621}
   m_Layer: 0
   m_Name: Onion
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5615839195994477154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -16.772957, y: -5.6638865, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2a1f494cabcac149882c992f55ba9c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3.5
+  stats: {fileID: 11400000, guid: cbeb1bcf939ddd24eb6e0b96c70a22ab, type: 2}
 --- !u!50 &4655793268774156482
 Rigidbody2D:
   serializedVersion: 4
@@ -113,9 +113,9 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
