@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     {
         //enemy = GameObject.Find("Potato").transform;
         player = GameObject.Find("Character").transform;
-        StartCoroutine(SpawnEnemies());
+        InvokeRepeating("SpawnEnemies",5.0f, 5.0f);
         //SpawnEnemies();
     }
 
@@ -27,31 +27,31 @@ public class GameController : MonoBehaviour
         if (timer > 0)
         {
             timer -= Time.deltaTime;
-            
+            Debug.Log(timer);
 
         }
     }
 
     
 
-    IEnumerator SpawnEnemies()
+    void SpawnEnemies()
     {
-
+        
         if (timer > 290.0f)
         {
-            enemiesPerWave = 50.0f;
+            enemiesPerWave = 10.0f;
         }
 
         for (int i = 0; i < enemiesPerWave; i++)
         {
-            float randDistanceX = Random.Range(-9.0f, 9.0f);
-            float randDistanceY = Random.Range(-9.0f, 9.0f);
+            float randDistanceX = Random.Range(-20.0f, 20.0f);
+            float randDistanceY = Random.Range(-20.0f, 20.0f);
             float playerPosX = player.position.x;
             float playerPosY = player.position.y;
             
 
             Instantiate(enemy, new Vector3(playerPosX + randDistanceX, playerPosY + randDistanceY, 0), enemy.rotation);
-            yield return new WaitForSeconds(timeBetweenSpawn);
+            //yield return new WaitForSeconds(timeBetweenSpawn);
         }
     }
 }
