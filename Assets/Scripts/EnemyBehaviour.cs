@@ -39,8 +39,9 @@ public class EnemyBehaviour : MonoBehaviour
         //{
         if (target)
         {
-            float randomX = Random.Range(-6.0f, 6.0f);
-            float randomY = Random.Range(-6.0f, 6.0f);
+            float varience = ((target.position - transform.position).magnitude);
+            float randomX = Random.Range(-1.0f * varience, 1.0f * varience);
+            float randomY = Random.Range(-1.0f * varience, 1.0f * varience);
             Vector3 directionRange = new Vector3 (randomX, randomY, 0.0f);
 
             Vector3 direction = (target.position + directionRange - transform.position).normalized;
