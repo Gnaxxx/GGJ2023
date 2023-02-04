@@ -42,15 +42,15 @@ public class backgroundLoop : MonoBehaviour
             GameObject firstChild = children[1].gameObject;
             GameObject lastChild = children[children.Length - 1].gameObject;
             float halfObjectWidth = lastChild.GetComponent<SpriteRenderer>().bounds.extents.x - choke;
-            if (transform.position.x + screenBounds.x > lastChild.transform.position.x + halfObjectWidth)
+            if (transform.position.x + screenBounds.x > firstChild.transform.position.x + halfObjectWidth)
             {
                 firstChild.transform.SetAsLastSibling();
-                firstChild.transform.position = new Vector3(lastChild.transform.position.x + halfObjectWidth * 2, lastChild.transform.position.y, lastChild.transform.position.z);
+                firstChild.transform.position = new Vector3(firstChild.transform.position.x + halfObjectWidth, lastChild.transform.position.y, lastChild.transform.position.z);
             }
             else if (transform.position.x - screenBounds.x < firstChild.transform.position.x - halfObjectWidth)
             {
-                lastChild.transform.SetAsFirstSibling();
-                lastChild.transform.position = new Vector3(firstChild.transform.position.x - halfObjectWidth * 2, firstChild.transform.position.y, firstChild.transform.position.z);
+                firstChild.transform.SetAsFirstSibling();
+                firstChild.transform.position = new Vector3(lastChild.transform.position.x - halfObjectWidth, lastChild.transform.position.y, lastChild.transform.position.z);
             }
             if (transform.position.y - screenBounds.y > firstChild.transform.position.y - halfObjectWidth)
             {
