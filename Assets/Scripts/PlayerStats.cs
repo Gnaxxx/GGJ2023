@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    private float health = 100.0f;
     // Start is called before the first frame update
+    public void takeDamage()
+    {
+
+    }
+
     void Start()
     {
         

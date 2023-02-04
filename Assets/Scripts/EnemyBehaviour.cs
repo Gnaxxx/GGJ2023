@@ -8,7 +8,8 @@ public class EnemyBehaviour : MonoBehaviour
     //private float range = 500.0f;
     Rigidbody2D rb;
     private float speed = 3.5f;
-    Vector2 moveDirection;
+    private Vector2 moveDirection;
+    
     // Start is called before the first frame update
 
     void Awake()
@@ -27,10 +28,13 @@ public class EnemyBehaviour : MonoBehaviour
     {
         //if (dist <= range)
         //{
-        //transform.position = Vector3.MoveTowards(transform.position, target.transform.position, speed);
         if (target)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
+            float randomX = Random.Range(-6.0f, 6.0f);
+            float randomY = Random.Range(-6.0f, 6.0f);
+            Vector3 directionRange = new Vector3 (randomX, randomY, 0.0f);
+
+            Vector3 direction = (target.position + directionRange - transform.position).normalized;
             moveDirection = direction;
         }            
         //}
