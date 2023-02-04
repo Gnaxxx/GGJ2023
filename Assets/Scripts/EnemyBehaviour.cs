@@ -14,9 +14,10 @@ public class EnemyBehaviour : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        //Destroy(gameObject);
         if (col.collider.gameObject.CompareTag("Character"))
         {
-            Debug.Log("WAWASDASDASD");
+            Destroy(gameObject);
         }
     }
     

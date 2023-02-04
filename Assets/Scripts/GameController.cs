@@ -15,7 +15,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        enemy = GameObject.Find("Potato").transform;
+        //enemy = GameObject.Find("Potato").transform;
         player = GameObject.Find("Character").transform;
         StartCoroutine(SpawnEnemies());
         //SpawnEnemies();
@@ -39,7 +39,7 @@ public class GameController : MonoBehaviour
 
         if (timer > 290.0f)
         {
-            enemiesPerWave = 5.0f;
+            enemiesPerWave = 50.0f;
         }
 
         for (int i = 0; i < enemiesPerWave; i++)
@@ -50,7 +50,7 @@ public class GameController : MonoBehaviour
             float playerPosY = player.position.y;
             
 
-            Instantiate(enemy, new Vector3(playerPosX + randDistanceX, playerPosY + randDistanceY, 0), transform.rotation);
+            Instantiate(enemy, new Vector3(playerPosX + randDistanceX, playerPosY + randDistanceY, 0), enemy.rotation);
             yield return new WaitForSeconds(timeBetweenSpawn);
         }
     }
