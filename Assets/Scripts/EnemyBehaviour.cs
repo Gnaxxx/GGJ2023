@@ -16,7 +16,7 @@ public class EnemyBehaviour : MonoBehaviour
     {
         if (col.collider.gameObject.CompareTag("Character"))
         {
-            Application.Quit();
+            Debug.Log("WAWASDASDASD");
         }
     }
     
@@ -44,6 +44,8 @@ public class EnemyBehaviour : MonoBehaviour
 
             Vector3 direction = (target.position + directionRange - transform.position).normalized;
             moveDirection = direction;
+
+            
         }            
         //}
     }
