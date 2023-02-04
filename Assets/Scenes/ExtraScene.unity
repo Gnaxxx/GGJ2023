@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9ffde536168f14583e6be47edc21a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 1
+  frequency: 0.1
   starPrefab: {fileID: 4102100806989763569, guid: 02eeb76860b6ee6458e18a51deece32a, type: 3}
 --- !u!114 &1186574987
 MonoBehaviour:
