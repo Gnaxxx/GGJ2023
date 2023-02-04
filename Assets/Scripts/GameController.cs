@@ -46,8 +46,27 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < enemiesPerWave; i++)
         {
-            float randDistanceX = Random.Range(-20.0f, 20.0f);
-            float randDistanceY = Random.Range(-20.0f, 20.0f);
+            float randDistanceX = Random.Range(-10.0f, 10.0f);
+            float randDistanceY = Random.Range(-10.0f, 10.0f);
+
+            if (randDistanceX > 0)
+            {
+                randDistanceX += 10.0f;
+            }
+            else
+            {
+                randDistanceX -= 10.0f;
+            }
+
+            if (randDistanceY > 0)
+            {
+                randDistanceY += 10.0f;
+            }
+            else
+            {
+                randDistanceY -= 10.0f;
+            }
+
             float playerPosX = player.position.x;
             float playerPosY = player.position.y;
             int randomEnemy = Random.Range(0, 3);
