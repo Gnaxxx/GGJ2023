@@ -17,7 +17,7 @@ public class EnemyBehaviour : MonoBehaviour
         //Destroy(gameObject);
         if (col.collider.gameObject.CompareTag("Character"))
         {
-            Destroy(gameObject);
+            target.GetComponent<PlayerStats>().takeDamage(10.0f);
         }
     }
     

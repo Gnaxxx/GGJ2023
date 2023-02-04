@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     private float timeBetweenSpawn = 0.7f;
     private float enemiesPerWave;
     private int difficultyCounter = 0;
-    public Transform enemy;
+    public Transform[] enemy;
     Transform player;
     // Start is called before the first frame update
     void Start()
@@ -37,6 +37,7 @@ public class GameController : MonoBehaviour
     void SpawnEnemies()
     {
         
+
         if (timer > 290.0f)
         {
             enemiesPerWave = 10.0f;
@@ -48,9 +49,9 @@ public class GameController : MonoBehaviour
             float randDistanceY = Random.Range(-20.0f, 20.0f);
             float playerPosX = player.position.x;
             float playerPosY = player.position.y;
-            
+            int randomEnemy = Random.Range(0, 2);
 
-            Instantiate(enemy, new Vector3(playerPosX + randDistanceX, playerPosY + randDistanceY, 0), enemy.rotation);
+            Instantiate(enemy[randomEnemy], new Vector3(playerPosX + randDistanceX, playerPosY + randDistanceY, 0), enemy[randomEnemy].rotation);
             //yield return new WaitForSeconds(timeBetweenSpawn);
         }
     }

@@ -10,19 +10,24 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     
     
-    void takeDamage()
+    public void takeDamage(float dmg)
     {
-
+        currentHealth -= dmg;
     }
 
     void Start()
     {
         currentHealth = maxHealth;
     }
+    //
 
     // Update is called once per frame
     void Update()
     {
-     
+        if (currentHealth <= 0.0f)
+        {
+            Application.Quit();
+        }
+        Debug.Log(currentHealth);
     }
 }
