@@ -53,6 +53,10 @@ public class EnemyBehaviour : MonoBehaviour
         if (target)
         {
             float varience = ((target.position - transform.position).magnitude);
+            if (varience > 50)
+            {
+                Destroy(gameObject);
+            }
             float randomX = Random.Range(-1.0f * varience, 1.0f * varience);
             float randomY = Random.Range(-1.0f * varience, 1.0f * varience);
             Vector3 directionRange = new Vector3 (randomX, randomY, 0.0f);
