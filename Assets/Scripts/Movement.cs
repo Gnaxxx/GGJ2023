@@ -104,7 +104,7 @@ public class Movement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.S))
         {
-            A = true;
+            S = true;
         }
         else if (Input.GetKeyUp(KeyCode.S))
         {
