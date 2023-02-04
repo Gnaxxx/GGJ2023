@@ -7,11 +7,19 @@ public class EnemyBehaviour : MonoBehaviour
     Transform target;
     //private float range = 500.0f;
     Rigidbody2D rb;
-    private float speed = 3.5f;
+    public float speed = 3.5f;
     private Vector2 moveDirection;
     
     // Start is called before the first frame update
 
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.collider.gameObject.CompareTag("Character"))
+        {
+            Application.Quit();
+        }
+    }
+    
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();

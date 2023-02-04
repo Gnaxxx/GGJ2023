@@ -7,15 +7,18 @@ public class GameController : MonoBehaviour
     public float timer = 300.0f;
     private float timeBeforeSpawning = 1.5f;
     private float timeBeforeWaves = 2.0f;
+    private float timeBetweenSpawn = 0.7f;
     private float enemiesPerWave;
     private int difficultyCounter = 0;
-    Transform enemy;
+    public Transform enemy;
     Transform player;
     // Start is called before the first frame update
     void Start()
     {
         enemy = GameObject.Find("Potato").transform;
         player = GameObject.Find("Character").transform;
+        StartCoroutine(SpawnEnemies());
+        //SpawnEnemies();
     }
 
     // Update is called once per frame
@@ -24,12 +27,14 @@ public class GameController : MonoBehaviour
         if (timer > 0)
         {
             timer -= Time.deltaTime;
-            SpawnEnemies();
+            
 
         }
     }
 
-    void SpawnEnemies()
+    
+
+    IEnumerator SpawnEnemies()
     {
 
         if (timer > 290.0f)
@@ -39,12 +44,14 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < enemiesPerWave; i++)
         {
-            float randDistance = Random.Range(5.0f, 7.0f);
-            float randDirection = Random.Range(0.0f, 360.0f);
-            float posX = player.transform.position.x + (Mathf.Cos((randDirection) * Mathf.Deg2Rad) * randDistance);
-            float posY = player.transform.position.y + (Mathf.Sin((randDirection) * Mathf.Deg2Rad) * randDistance);
+            float randDistanceX = Random.Range(-7.0f, 7.0f);
+            float randDistanceY = Random.Range(-7.0f, 7.0f);
+            float playerPosX = player.position.x;
+            float playerPosY = player.position.y;
+            
 
-            Instantiate(enemy, new Vector3(posX, posY, 0), this.transform.rotation);
+            Instantiate(enemy, new Vector3(playerPosX + randDistanceX, playerPosY + randDistanceY, 0), transform.rotation);
+            yield return new WaitForSeconds(timeBetweenSpawn);
         }
     }
 }
