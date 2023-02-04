@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: BARRIER stats
   m_EditorClassIdentifier: 
   speed: 0
-  hits: 100
+  hits: 10
   damage: 0

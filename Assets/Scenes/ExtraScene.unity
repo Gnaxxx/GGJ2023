@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &250630530
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 250630531}
+  - component: {fileID: 250630532}
+  m_Layer: 0
+  m_Name: BowlingBallLauncher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &250630531
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250630530}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9202606612279729352}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &250630532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 250630530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d9ffde536168f14583e6be47edc21a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  frequency: 2
+  starPrefab: {fileID: 4495890559763446538, guid: 73fde83d8a3dda64487b79d5b5c2b23c, type: 3}
 --- !u!1 &405367793
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,7 +343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9ffde536168f14583e6be47edc21a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 0.1
+  frequency: 0.25
   starPrefab: {fileID: 4102100806989763569, guid: 02eeb76860b6ee6458e18a51deece32a, type: 3}
 --- !u!1 &1076992532
 GameObject:
@@ -586,7 +632,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9202606612279729352}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1945696699
 MonoBehaviour:
@@ -600,7 +646,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d9ffde536168f14583e6be47edc21a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 0.01
+  frequency: 0.04
   starPrefab: {fileID: 1847771239506741896, guid: 93cb57385529f4846bbbd68826aa356d, type: 3}
 --- !u!50 &7768856814373513404
 Rigidbody2D:
@@ -638,6 +684,7 @@ Transform:
   - {fileID: 895335626}
   - {fileID: 1076992533}
   - {fileID: 590640955}
+  - {fileID: 250630531}
   - {fileID: 1945696698}
   m_Father: {fileID: 0}
   m_RootOrder: 1
